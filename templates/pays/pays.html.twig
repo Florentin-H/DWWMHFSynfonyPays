@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title %}Le voyage autour du monde
+{% endblock %}
+{%block monTitre %}Liste des pays
+{% endblock %}
+{% block body %}
+	<table class="table  ">
+		<tr class="theah-dark">
+			<th>Nom</th>
+			<th>Drapeau</th>
+			<th>capital</th>
+			<th>description</th>
+		</tr>
+
+		{% for listePays in pays %}
+
+
+			<tr>
+                <td><a href="{{path('afficherPays',{'nom': pays.nom|lower})}}">{{pays.nom}}</a></td>
+				<td><img src="{{asset('images/pays/' ~ pays.nom ~'.png')}}" alt=""></td>
+				<td>{{pays.capital}}</td>
+				<td>{{pays.description}}</td>
+			</tr>
+		{% endfor %}
+	</table>
+{% endblock %}
