@@ -1,26 +1,23 @@
-{% extends 'base.html.twig' %}
-{% block title %}Le voyage autour du monde
-{% endblock %}
-{%block monTitre %}Liste des pays
-{% endblock %}
-{% block body %}
-	<table class="table  ">
-		<tr class="theah-dark">
-			<th>Nom</th>
-			<th>Drapeau</th>
-			<th>capital</th>
-			<th>description</th>
-		</tr>
+	{% extends 'base.html.twig' %}
+		{% block title %}Le voyage autour du monde{% endblock %}
+		{% block monTitre %}Liste des pays{% endblock %}
+			{% block body %}
+	
+{# <div class="d-flex   ">
+	<div class=" pt-3 row justify-content-around  ">
+		<div class=" card col-3 "> <a href="{{path("France")}}" class="btn">Afficher les détails</a><img src="{{ asset("images/pays/France.png")}}" alt=""></a></div>
+		<div class="card col-3 "> <a href="{{path("France")}}" class="btn">Afficher les détails</a><img src="{{ asset("images/pays/ile maurice.png")}}" alt=""></a></div>
+		<div class="card col-3 "> <a href="{{path("France")}}" class="btn">Afficher les détails</a><img src="{{ asset("images/pays/USA.png")}}" alt=""></a></div>
+	</div>
+</div> #}
 
-		{% for listePays in pays %}
-
-
-			<tr>
-                <td><a href="{{path('afficherPays',{'nom': pays.nom|lower})}}">{{pays.nom}}</a></td>
-				<td><img src="{{asset('images/pays/' ~ pays.nom ~'.png')}}" alt=""></td>
-				<td>{{pays.capital}}</td>
-				<td>{{pays.description}}</td>
-			</tr>
-		{% endfor %}
-	</table>
-{% endblock %}
+					<div class="d-flex   ">
+				{% for chaquePays in pays %}
+					<div class=" pt-3 row justify-content-around  ">
+					<div class=" card col-3 "> <a href="{{path('afficherPays',{'nom':chaquePays.nom|lower})}}" class="btn">Afficher les détails</a><img src="{{ asset("images/pays/" ~ chaquePays.nom ~ ".png")}}" alt=""></a>
+					</div>
+					</div>
+					</div>
+					</div>
+				{% endfor %}
+			{% endblock %}
