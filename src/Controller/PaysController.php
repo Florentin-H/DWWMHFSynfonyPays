@@ -15,15 +15,16 @@ class PaysController extends AbstractController
         Pays::creerPays();
         return $this->render('pays/pays.html.twig', [
             "pays" => Pays::$listePays
+            
         ]);
     }
-    #[Route('/{{chaquePays.nom}}', name: 'afficherPays')]
+    #[Route('/{nom}', name: 'afficherPays')]
     public function afficherPays($nom): Response
     {
         Pays::creerPays();
         $pays = Pays::getPaysParNom($nom);
         return $this->render('pays/unPays.html.twig', [
-            "unPays"=> $pays
+            "pays"=> $pays
         ]);
     }
     

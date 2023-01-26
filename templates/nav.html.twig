@@ -13,14 +13,17 @@
             <a class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="true">
               Liste des country
             </a>
-            {# <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-              {% for chaquePays in pays %}
-              <li><a class="dropdown-item" href="{{path(chaquePays.nom)}}">{{chaquePays.nom}}</a></li>
-              
-            </ul>
-            </li>
-            {% endfor %} #}
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              {% for troisPays in pays %}
+              {# <pre>
+                {{ dump(pays) }}
+              </pre> #}
+               <li><a class="dropdown-item" href="{{path('afficherPays',{'nom': troisPays.getNom()|lower})}}">{{troisPays.getNom()|lower}}</a></li>
+              </li>
             
+            
+            {% endfor %} 
+            </ul>
           </div>
         
       </ul>

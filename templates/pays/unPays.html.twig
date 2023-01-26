@@ -1,9 +1,23 @@
 {% extends 'base.html.twig' %}
 {% block title %}Le voyage autour du monde
 {% endblock %}
-{%block monTitre %}{{pays.nom}}
-{% endblock %}
+{%block monTitre %}
+	{{ pays.nom }}
+	{% endblock %}
 {% block body %}
+<div class="d-flex">
+	<img src="{{asset("images/decors/" ~ pays.pathImage )}} " alt="">
+</div>
+
+<div>
+	{{ pays.capitale }}
+
+</div>
+
+<div>
+	{{ pays.description }}
+
+</div>
 	
 	</table>
 {% endblock %}
