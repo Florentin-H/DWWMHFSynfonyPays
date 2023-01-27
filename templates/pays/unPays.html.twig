@@ -5,18 +5,22 @@
 	{{ pays.nom }}
 	{% endblock %}
 {% block body %}
-<div class="d-flex">
+<div class="row">
+<div class="row row-cols-2 ">
+	<div class="card" ">
 	<img src="{{asset("images/decors/" ~ pays.pathImage )}} " alt="">
 </div>
 
-<div>
-	{{ pays.capitale }}
+<div class="col border rounded">
+	<h2>La capitale : {{ pays.capitale }}</h2>
 
 </div>
 
-<div>
+<div class="col text-center border rounded">
 	{{ pays.description }}
 
+</div>
+</div>
 </div>
 	
 	</table>

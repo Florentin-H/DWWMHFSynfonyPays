@@ -54,15 +54,10 @@
               Products
             </h6>
             <p>
-              <a href="#!" class="text-reset">France</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">Ile maurice</a>
-            </p>
-            <p>
-              <a href="#!" class="text-reset">USA</a>
-            </p>
-            
+              {% for troisPays in pays %}
+             
+               <a class="text-reset" href="{{path('afficherPays',{'nom': troisPays.getNom()|lower})}}">{{troisPays.getNom()|lower}}</a></li>
+              {% endfor %}
           </div>
           <!-- Grid column -->
   

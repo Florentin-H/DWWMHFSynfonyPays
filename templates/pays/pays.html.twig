@@ -1,14 +1,12 @@
 	{% extends 'base.html.twig' %}
 		{% block title %}Le voyage autour du monde{% endblock %}
 		{% block monTitre %}Liste des pays{% endblock %}
-			{% block body %}
-			{% for chaquePays in pays %}
-			<div class="d-flex justify-content-between   ">
-						<div class=" pt-3 row justify-content-around  ">
-							<div class=" card col-2 "> <a href="{{path('afficherPays',{'nom':chaquePays.nom|lower})}}" class="btn">Afficher les détails</a><img src="{{ asset("images/pays/" ~ chaquePays.nom ~ ".png")}}" alt=""></a>
-							</div>
-						</div>
-						
-					</div>
-						{% endfor %}
+		{% block body %}
+			<div class=" mt-5 d-flex justify-content-around   ">
+				{% for chaquePays in pays %}
+				<div class="card justify-content-center    pb-2 mb-4   ">
+					<a href="{{path('afficherPays',{'nom':chaquePays.nom|lower})}}" class="  btn">Afficher les détails</a><img class="col-12" src="{{ asset("images/pays/" ~ chaquePays.nom ~ ".png")}}" alt=""></a>	
+				</div>
+				{% endfor %}
+			</div>
 			{% endblock %}
